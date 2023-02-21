@@ -1,14 +1,14 @@
 fetch("../data/products.json")
-    .then(response => response.json())
-    .then(data => {
-        let products = data.products
+    .then((response) => response.json())
+    .then((data) => {
+        let products = data.products;
         let placeholder = document.querySelector(".column2__row");
-        let topp = []
+        let topp = [];
         let typeTopping = "";
         for (let product of products) {
-            topp.push(...product.toppings)
+            topp.push(...product.toppings);
         }
-        let topps = [...new Set(topp)]
+        let topps = [...new Set(topp)];
 
         for (let topp of topps) {
             typeTopping += `
@@ -16,7 +16,7 @@ fetch("../data/products.json")
                     <input class="filter__toppings-toggle--input" type="checkbox" name="topping" id="topping-${topp}" value="${topp}">
                     <label class="filter__toppings-toggle--label" for="topping-${topp}">${topp}</label>
                 </div>
-            `
+            `;
         }
         document.querySelector(".filter__toppings").innerHTML = typeTopping;
 
@@ -38,14 +38,17 @@ fetch("../data/products.json")
             if (filters.length === 0) {
                 filteredProducts = products;
             } else {
-                filteredProducts = products.filter(product => {
-                    return product.toppings && product.toppings.length && filters.every(topping => product.toppings.includes(topping));
+                filteredProducts = products.filter((product) => {
+                    return (
+                        product.toppings &&
+                        product.toppings.length &&
+                        filters.every((topping) => product.toppings.includes(topping))
+                    );
                 });
             }
 
             if (filteredProducts.length === 0) {
-                // Display a message or hide the products section
-                console.log('No products match the selected filters');
+                placeholder.innerHTML = "<p>No products match the selected filters</p>";
             } else {
                 let drink = "";
                 for (let product of filteredProducts) {
@@ -59,12 +62,10 @@ fetch("../data/products.json")
                                 <p class="column2__card-items--price">$${product.price}</p>
                             </div>
                         </div>
-                    `
+                    `;
                 }
                 placeholder.innerHTML = drink;
             }
         }
-
-
-    })
-
+        filterProduct();
+    });
