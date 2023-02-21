@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  position: relative;
 }
 
 .column1 {
@@ -13,6 +14,9 @@ body {
   background-color: #253172;
   color: #fff;
   height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 
 .column1__title {
@@ -34,10 +38,13 @@ body {
 }
 
 .column2 {
+  right: 0;
+  top: 0;
   float: left;
   width: 80%;
   background-color: #f7f7f7;
-  height: 100vh;
+  height: 100%;
+  position: absolute;
 }
 
 .column2__title {
@@ -127,7 +134,7 @@ body {
   box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.08);
 }
 .column2__card-items {
-  border: 1px solid #000;
+  border: 1px solid #dfdddd;
 }
 
 @media screen and (max-width: 720px) {
@@ -165,7 +172,6 @@ body {
   color: #112179;
   font-weight: 600;
   margin-bottom: 10px;
-
 }
 
 .column2__card-items--topping--name {
@@ -180,4 +186,34 @@ body {
   font-weight: 700;
   text-align: end;
   margin-top: 2.5rem;
+}
+
+.filter__toppings {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f1f1f1;
+  margin: 20px 40px 30px 40px;
+  min-height: 90px;
+  padding: 5px 20px 0px 15px;
+  transition: 2s;
+}
+
+.filter__toppings-toggle--title {
+  font-size: 1.1rem;
+  color: #112179;
+  font-weight: 700;
+}
+
+.filter__topping:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.filter__toppings-toggle--items {
+  width: 30%;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #2d3a81;
 }

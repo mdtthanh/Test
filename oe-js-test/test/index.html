@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Test JS</title>
+</head>
+
+<body>
+    <div class="container">
+            <div class="column1">
+                <div class="column1__title">Milk Tea Store</div>
+                <div class="column1__store">
+                    <p>Store 1</p>
+                    <p>Store 2</p>
+                    <p>Store 3</p>
+                    <p>Store 4</p>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="column2__title">Store 1 Menu</div>
+                <div class="column2__menu">
+                    <div class="column2__menu-filter">
+                        <button onclick="handleToggle()" class="column2__menu-filter--btn">Filter</button>
+                        <div class="column2__menu-filter--options">
+                            <span class="column2__menu-filter--options--text">Sort By</span>
+                            <select class="column2__menu-filter--options--choose" name="" id="">
+                                <option class="choose" value="">Name A - Z</option>
+                                <option class="choose" value="">Name Z - A</option>
+                                <option class="choose" value="">Price low - high</option>
+                                <option class="choose" value="">Price low - high</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter__toppings">
+                        <div class="filter__toppings-toggle">
+                            <p class="filter__toppings-toggle--title">Toppings:</p>
+                            <div class="filter__toppings-toggle--items">
+                                <input class="filter__toppings-toggle--input" type="checkbox" id="topping" value="">
+                                <label class="filter__toppings-toggle--label" for="topping">Milk Foam</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="column2__row">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
