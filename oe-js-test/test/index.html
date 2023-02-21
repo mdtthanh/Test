@@ -37,18 +37,14 @@
                         </div>
                     </div>
 
-                    <div class="filter__toppings">
+                    <div class="filter__toppings ">
                         <div class="filter__toppings-toggle">
                             <p class="filter__toppings-toggle--title">Toppings:</p>
-                            <div class="filter__toppings-toggle--items">
-                                <input class="filter__toppings-toggle--input" type="checkbox" id="topping" value="">
-                                <label class="filter__toppings-toggle--label" for="topping">Milk Foam</label>
-                            </div>
                         </div>
 
                     </div>
 
-                    <div class="column2__row">
+                    <div class="column2__row ">
                     </div>
                 </div>
 
@@ -57,7 +53,18 @@
 
     </div>
 
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script>
+        function handleToggle() {
+    var x = document.querySelector(".filter__toppings");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+
+    } else {
+        x.style.display = "none";
+    }
+}
+    </script>
 </body>
 
 </html>
