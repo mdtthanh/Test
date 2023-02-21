@@ -104,7 +104,6 @@ body {
 
 .column2__row {
   margin: 0 24px;
-
 }
 .column2__row:after {
   content: "";
@@ -141,7 +140,44 @@ body {
 
 .column2__card-items {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
   background-color: #f1f1f1;
+  padding: 5px 20px;
+}
+
+.column2__card-items--id {
+  font-size: 1.1rem;
+  color: #2d3a81;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.column2__card-items--name {
+  font-size: 1.2rem;
+  color: #112179;
+  font-weight: 700;
+  margin: 10px 0;
+  border-bottom: 3px solid #112179;
+  padding-bottom: 10px;
+}
+
+.column2__card-items--topping {
+  font-size: 1.1rem;
+  color: #112179;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+
+.column2__card-items--topping--name {
+  font-size: 1.1rem;
+  color: #2d3a81;
+  font-weight: 500;
+}
+
+.column2__card-items--price {
+  font-size: 1.2rem;
+  color: #112179;
+  font-weight: 700;
+  text-align: end;
+  margin-top: 2.5rem;
 }
