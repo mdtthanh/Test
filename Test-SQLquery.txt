@@ -1,0 +1,13 @@
+Question:
+1. Write a sql query to find “number of employees working in each department who
+have salary > 7000”
+    => Answer: "SELECT COUNT(EMP_ID) FROM employee WHERE EMP_SALARY > 7000"
+
+2. Write a sql query to find “number of employees working in each department and
+average salary of department, exclude all departments with average salary <=
+7000”
+    => Answer: "SELECT department.DEPT_NAME, COUNT(employee.EMP_NAME), AVG(employee.EMP_SALARY) as 'Number of Employee'
+    FROM department JOIN employee ON department.DEPT_ID = employee.DEPT_ID 
+    GROUP BY department.DEPT_NAME 
+    HAVING AVG(employee.EMP_SALARY) > 7000"
+
