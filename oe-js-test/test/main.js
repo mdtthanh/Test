@@ -15,18 +15,24 @@ fetch("../data/products.json")
                 <div class="filter__toppings-toggle--items">
                     <input class="filter__toppings-toggle--input" type="checkbox" name="topping" id="topping-${topp}" value="${topp}">
                     <label class="filter__toppings-toggle--label" for="topping-${topp}">${topp}</label>
-                </div>
+                </div>  
             `;
         }
         document.querySelector(".filter__toppings").innerHTML = typeTopping;
 
         const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        const selectBox = document.querySelector("#sort-select");
 
         checkboxes.forEach((checkbox) => {
             checkbox.addEventListener('click', filterProduct);
         });
 
+        selectBox.addEventListener('change', () => {
+            filterProduct();
+          });
+
         function filterProduct() {
+            const selectedValue = selectBox.value;
             const filters = [];
             const checkedBoxes = document.querySelectorAll('input[type=checkbox]:checked');
             checkedBoxes.forEach((checkbox) => {
@@ -47,6 +53,15 @@ fetch("../data/products.json")
                 });
             }
 
+            if (selectedValue === "price-asc") {
+                filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+              } else if (selectedValue === "price-desc") {
+                filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+              } else if (selectedValue === "name-asc") {
+                filteredProducts = filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+              } else if (selectedValue === "name-desc") {
+                filteredProducts = filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+              }
             if (filteredProducts.length === 0) {
                 placeholder.innerHTML = "<p>No products match the selected filters</p>";
             } else {
